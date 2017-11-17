@@ -9,7 +9,8 @@ const createWindow = function() {
         height: 383,
         resizable: false,
         frame: false,
-        transparent: true
+        transparent: true,
+        icon: path.join(__dirname, "icon.png")
     });
     window.loadURL(
         url.format({
@@ -18,6 +19,7 @@ const createWindow = function() {
             slashes: true
         })
     );
+    //if (process.env.NODE_ENV === "dev")
     window.webContents.openDevTools();
 };
 app.on("ready", createWindow);

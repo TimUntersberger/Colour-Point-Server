@@ -2,7 +2,7 @@ const path = require("path");
 const fs = require("fs-extra");
 const exec = require("child_process").execSync;
 const spawn = require("child_process").spawn;
-const serverPath = path.join(process.env.home, "colour-point");
+const serverPath = path.join(process.env.homepath, "colour-point");
 const status = {
     stopped: "stopped",
     notInstalled: "not installed",
@@ -57,7 +57,7 @@ const install = function() {
         setTimeout(function() {
             exec(
                 "git clone https://www.github.com/TimUntersberger/colour-point.git colour-point",
-                { cwd: process.env.home }
+                { cwd: process.env.homepath }
             );
             exec("npm install", { cwd: serverPath });
             setStatus(status.stopped);
@@ -100,6 +100,7 @@ const stop = function() {
     setStatus(status.stopped);
 };
 const exit = function() {
-    if (process.serverProc === null) return;
-    kill(process.serverProc.pid, null, require("electron").remote.app.quit);
+    if (process.serverProc !== null)
+        kill(process.serverProc.pid, null, require("electron").remote.app.quit);
+    else require("electron").remote.app.quit;
 };
