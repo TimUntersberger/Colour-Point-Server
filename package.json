@@ -1,0 +1,60 @@
+{
+    "name": "electron-quick-start",
+    "version": "1.0.0",
+    "description": "A minimal Electron application",
+    "main": "src/main.js",
+    "scripts": {
+        "dev": "set NODE_ENV=dev&& npm run start",
+        "build": "electron-forge make",
+        "start": "electron-forge start",
+        "package": "electron-forge package",
+        "make": "electron-forge make"
+    },
+    "repository": "https://github.com/electron/electron-quick-start",
+    "keywords": ["Electron", "quick", "start", "tutorial", "demo"],
+    "author": "GitHub",
+    "license": "CC0-1.0",
+    "devDependencies": {
+        "babel-plugin-transform-async-to-generator": "^6.24.1",
+        "babel-preset-env": "^1.6.1",
+        "babel-preset-es2017-node7": "^0.5.2",
+        "babel-preset-react": "^6.24.1",
+        "electron-forge": "^4.1.5",
+        "electron-prebuilt-compile": "1.7.9",
+        "react-hot-loader": "^3.1.3"
+    },
+    "dependencies": {
+        "electron-compile": "^6.4.2",
+        "electron-squirrel-startup": "^1.0.0",
+        "electron-devtools-installer": "^2.2.1",
+        "material-ui": "^1.0.0-beta.21",
+        "material-ui-icons": "^1.0.0-beta.17",
+        "react": "^16.1.1",
+        "react-dom": "^16.1.1",
+        "react-redux": "^5.0.6",
+        "redux": "^3.7.2",
+        "tree-kill": "^1.2.0"
+    },
+    "config": {
+        "forge": {
+            "make_targets": {
+                "win32": ["squirrel"],
+                "darwin": ["zip"],
+                "linux": ["deb", "rpm"]
+            },
+            "electronPackagerConfig": {},
+            "electronWinstallerConfig": {
+                "name": "colour-point"
+            },
+            "electronInstallerDebian": {},
+            "electronInstallerRedhat": {},
+            "github_repository": {
+                "owner": "",
+                "name": ""
+            },
+            "windowsStoreConfig": {
+                "packageName": ""
+            }
+        }
+    }
+}
