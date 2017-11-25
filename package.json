@@ -4,14 +4,20 @@
     "description": "A minimal Electron application",
     "main": "src/main.js",
     "scripts": {
-        "dev": "set NODE_ENV=dev&& npm run start",
+        "dev": "export NODE_ENV=dev&& set NODE_ENV=dev&&npm run start",
         "build": "electron-forge make",
         "start": "electron-forge start",
         "package": "electron-forge package",
         "make": "electron-forge make"
     },
     "repository": "https://github.com/electron/electron-quick-start",
-    "keywords": ["Electron", "quick", "start", "tutorial", "demo"],
+    "keywords": [
+        "Electron",
+        "quick",
+        "start",
+        "tutorial",
+        "demo"
+    ],
     "author": "GitHub",
     "license": "CC0-1.0",
     "devDependencies": {
@@ -38,9 +44,16 @@
     "config": {
         "forge": {
             "make_targets": {
-                "win32": ["squirrel"],
-                "darwin": ["zip"],
-                "linux": ["deb", "rpm"]
+                "win32": [
+                    "squirrel"
+                ],
+                "darwin": [
+                    "zip"
+                ],
+                "linux": [
+                    "deb",
+                    "rpm"
+                ]
             },
             "electronPackagerConfig": {},
             "electronWinstallerConfig": {
